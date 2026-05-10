@@ -1,15 +1,18 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
+
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 8000
 
-app.get('/greet', (req, res) => {
-    res.send('hello nitin');
-})
+app.use(express.json()); // allow us to accept JSON data in req.body
 
-app.listen(8000, () => {
+import userRouter from './routes/product.routes.js'
+app.use('/api/products', userRouter)
+
+app.listen(PORT, () => {
     connectDB();
-    console.log('Server started at http://localhost:5000')
+    console.log('Server started at http://localhost:8000')
 })
