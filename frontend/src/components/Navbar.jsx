@@ -20,7 +20,7 @@ const Navbar = () => {
           </HStack>
         </Link>
 
-        <HStack spacing={'2'} alignItems={'center'}>
+        <HStack gap={'2'} alignItems={'center'}>
           <Link to={'/create'}>
             <Button>
               <SquarePlus />
