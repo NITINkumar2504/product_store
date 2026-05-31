@@ -9,8 +9,8 @@ const Navbar = () => {
   // const logoColor = useColorModeValue('black', 'white');
 
   return (
-    <Container maxW={"1140px"} px={'4'}>
-      <Flex h={'16'} alignItems={'center'} justifyContent={'space-between'} flexDirection={{base : 'column', sm : 'row'}}>
+    <Container maxW={"1140px"} px={'4'} py={1}>
+      <Flex h={'16'} alignItems={'center'} justifyContent={'space-between'} flexDirection={{base : 'column', sm : 'row'}} gap={2}>
         <Link to={'/'}>
           <HStack as={'span'} spacing={'2'} alignItems={'center'} justifyContent={'center'}>
             <Text fontSize={{ base: '1rem', sm: '1.5rem' }} fontWeight={'bold'} textTransform={'uppercase'} color={useColorModeValue('black', 'white')}>

@@ -3,8 +3,10 @@ import Product from "../models/product.model.js";
 
 const getProducts = async (req, res) => {
     try {
-        const products = await Product.find({}).select("-_id");   // empty obj to retrieve all documents in collection excluding _id
+        // const products = await Product.find({}).select("-_id");   // empty obj to retrieve all documents in collection excluding _id
         // console.log(products)
+
+        const products = await Product.find({})
         return res.status(200).json({
             success : true,
             data : products,
@@ -64,7 +66,7 @@ const updateProduct = async (req, res) => {
     const {id} = req.params;
 
     const product = req.body;
-    console.log(product)
+    // console.log(product)
 
     if(!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({
